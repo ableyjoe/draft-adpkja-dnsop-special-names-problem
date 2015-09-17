@@ -57,13 +57,51 @@
     <date day="17" month="September" year="2015"/>
 
     <abstract>
-      <t>Say things.</t>
+      <t>The dominant protocol for name resolution on the Internet
+	is the Domain Name System (DNS). However, other protocols
+	exist that are fundamentally different from the DNS, but
+	which have syntactically-similar namespaces.</t>
+
+      <t>When an end-user triggers resolution of a name on a system
+        which supports multiple, different protocols for name resolution,
+        it is desirable that the protocol to be used is unambiguous, and
+        that requests intended for one protocol are not inadvertently
+        addressed using another.</t>
+
+      <t>RFC 6761 introduced a framework by which, under certain
+	circumstances, a reservation could be made to accommodate
+	non-DNS name resolution protocols and avoid the possibility
+	of collisions between the two different, but syntactically-similar
+	namespaces.</t>
+
+      <t>Various challenges have become apparent with the application
+	of the guidance provided in RFC 6761 to real world protocols
+	and namespaces. This document aims to document those
+	challenges in the form of a problem statement, to facilitate
+	discussion of future improvements to RFC 6761.</t>
     </abstract>
   </front>
 
   <middle>
     <section title="Introduction">
-      <t>Say things.</t>
+    </section>
+
+    <section title="Clear and Specific Guidelines">
+    </section>
+
+    <section title="Evaluation Process">
+    </section>
+
+    <section title="Coordination with ICANN">
+    </section>
+
+    <section title="Clear Expectations">
+    </section>
+
+    <section title="Protocol Identifiers in Names">
+    </section>
+
+    <section title="Separation of Protocol and Policy">
     </section>
 
     <section title="Security Considerations">
