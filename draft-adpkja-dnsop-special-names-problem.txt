@@ -131,10 +131,10 @@ Table of Contents
      12.2.  Informative References  . . . . . . . . . . . . . . . . . 15
    Appendix A.  Editorial Notes . . . . . . . . . . . . . . . . . . . 16
      A.1.   Venue . . . . . . . . . . . . . . . . . . . . . . . . . . 16
-     A.2.   Change History  . . . . . . . . . . . . . . . . . . . . . 16
-       A.2.1.  draft-adpkja-special-names-problem-00  . . . . . . . . 16
+     A.2.   Pithy Quotes from History . . . . . . . . . . . . . . . . 16
+     A.3.   Change History  . . . . . . . . . . . . . . . . . . . . . 16
+       A.3.1.  draft-adpkja-special-names-problem-00  . . . . . . . . 16
    Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 17
-
 
 
 
@@ -183,15 +183,15 @@ Internet-Draft     Top-Level/Special-Use Domain Names     September 2015
 
       Aardvark (n): a medium-sized, burrowing, nocturnal mammal native
       to Africa; the only living species of the order Tubulidentata.
-      See <https://en.wikipedia.org/wiki/Aardvark>.
+      See <https://en.wikipedia.org/wiki/Aardvark>.  This is a
+      placeholder.
 
       Registry (n): the Special-Use Domain Names Registry created by
       [RFC6761] and published at <https://www.iana.org/assignments/
       special-use-domain-names/special-use-domain-names.xhtml>
 
-
-
-
+   [This section to be completed following review and development of the
+   rest of the text.]
 
 
 
@@ -850,42 +850,42 @@ A.1.  Venue
    An appropriate forum for discussion of this draft is the dnsop
    working group.
 
-A.2.  Change History
+A.2.  Pithy Quotes from History
 
-A.2.1.  draft-adpkja-special-names-problem-00
+      The question has arisen as to how the toplevel naming authority
+      decides who gets a toplevel name and who must get by with a non-
+      toplevel name.  The suggestion was made by MOCKAPETRIS@USC-ISIF
+      that perhaps the existing toplevel nameholders might vote on
+      whether the applicant for a new toplevel name should be granted,
+      with a majority needed for approval.  It seems to me this might
+      produce a clique whereby whoever initially gains power will hold
+      it and prevent its "enemies" from getting in too.  This will make
+      the toplevel rather less than universal.
+
+   (E-mail from Robert Elton Maas to the namedroppers mailing list on 9
+   November 1983)
+
+      My basic point is that as a world-wide network evolves it is
+      ridiculous to force people to name resources in terms of one
+      static hierarchy which very closely resembles the current
+      internetwork topology (as the current scheme does).  What we are
+      eventually going to require is a distributed expert for making
+      sense out of a name someone hands it.  There will be no simple
+      algorithm to be written on one page of an RFC that will suffice to
+      resolve a name.  Rather, a number of heuristics will let a
+      resolver make sense out of a given name by querying other experts
+      which it suspects may be more knowledgeable about the name than it
+      is, or by forwarding a piece of mail to an expert which is at
+      least one level closer to the destination in some hierarchy.
+
+   (E-mail from Peter Karp to the namedroppers mailing list on 8
+   February 1984)
+
+A.3.  Change History
+
+A.3.1.  draft-adpkja-special-names-problem-00
 
    Initial draft circulated for comment.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
