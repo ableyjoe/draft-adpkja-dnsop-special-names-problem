@@ -115,25 +115,25 @@ Internet-Draft     Special-Use Names Problem Statement    September 2015
 
 Table of Contents
 
-   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . ancho
-   2.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . ancho
-   3.  Clear and Specific Guidelines . . . . . . . . . . . . . . . ancho
-   4.  Evaluation Process  . . . . . . . . . . . . . . . . . . . . ancho
-   5.  Coordination with ICANN . . . . . . . . . . . . . . . . . . ancho
-   6.  Clear Expectations  . . . . . . . . . . . . . . . . . . . . ancho
-   7.  Protocol Identifiers in Names . . . . . . . . . . . . . . . ancho
-   8.  Separation of Protocol and Policy . . . . . . . . . . . . . ancho
-   9.  Security Considerations . . . . . . . . . . . . . . . . . . ancho
-   10. IANA Considerations . . . . . . . . . . . . . . . . . . . . ancho
-   11. Acknowledgements  . . . . . . . . . . . . . . . . . . . . . ancho
-   12. References  . . . . . . . . . . . . . . . . . . . . . . . . ancho
-     12.1.  Normative References . . . . . . . . . . . . . . . . . ancho
-     12.2.  Informative References . . . . . . . . . . . . . . . . ancho
-   Appendix A.  Editorial Notes  . . . . . . . . . . . . . . . . . ancho
-     A.1.   Venue  . . . . . . . . . . . . . . . . . . . . . . . . ancho
-     A.2.   Change History . . . . . . . . . . . . . . . . . . . . ancho
-       A.2.1.  draft-adpkja-special-names-problem-00 . . . . . . . ancho
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . .     0
+   1.  Introduction . . . . . . . . . . . . . . . . . . . . . . . . .  4
+   2.  Terminology  . . . . . . . . . . . . . . . . . . . . . . . . .  5
+   3.  Clear and Specific Guidelines  . . . . . . . . . . . . . . . .  6
+   4.  Evaluation Process . . . . . . . . . . . . . . . . . . . . . .  7
+   5.  Coordination with ICANN  . . . . . . . . . . . . . . . . . . .  8
+   6.  Clear Expectations . . . . . . . . . . . . . . . . . . . . . .  9
+   7.  Protocol Identifiers in Names  . . . . . . . . . . . . . . . . 10
+   8.  Separation of Protocol and Policy  . . . . . . . . . . . . . . 11
+   9.  Security Considerations  . . . . . . . . . . . . . . . . . . . 12
+   10. IANA Considerations  . . . . . . . . . . . . . . . . . . . . . 13
+   11. Acknowledgements . . . . . . . . . . . . . . . . . . . . . . . 14
+   12. References . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+     12.1.  Normative References  . . . . . . . . . . . . . . . . . . 15
+     12.2.  Informative References  . . . . . . . . . . . . . . . . . 15
+   Appendix A.  Editorial Notes . . . . . . . . . . . . . . . . . . . 16
+     A.1.   Venue . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+     A.2.   Change History  . . . . . . . . . . . . . . . . . . . . . 16
+       A.2.1.  draft-adpkja-special-names-problem-00  . . . . . . . . 16
+   Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 17
 
 
 
@@ -196,3 +196,757 @@ Internet-Draft     Special-Use Names Problem Statement    September 2015
    Names" registry.  The initial contents of that registry included 25
    entries, four of which were top-level domains ("TEST", "LOCALHOST",
    "INVALID" and "EXAMPLE").  Since the publication of [RFC6761], the
+   top-level domain names "LOCAL" [RFC6762] and "ONION"
+   [I-D.ietf-dnsop-onion-tld] were added.
+
+   While some of the entries in the Special-Use Domain Names registry
+   document use of a DNS-like namespace by non-DNS name resolution
+   protocols (LOCALHOST, LOCAL, ONION), other entries are included for
+   different reasons (e.g.  EXAMPLE.ORG, EXAMPLE.COM and EXAMPLE.NET are
+   reserved for use in documentation).
+
+   This document specifically explores the problems in the use of
+   [RFC6761] to justify the reservation of top-level domains in the DNS.
+   Use of [RFC6761] with reference to other domain names is not
+   discussed.
+
+
+
+
+
+
+
+
+
+
+
+Abley, et al.            Expires March 20, 2016                 [Page 4]
+
+Internet-Draft     Special-Use Names Problem Statement    September 2015
+
+
+2.  Terminology
+
+   Clear and unambiguous use of terminology is important for the clear
+   formulation of any problem statement.  The DNS protocol suffers from
+   imprecise and overloaded terminology (e.g. see
+   [I-D.ietf-dnsop-dns-terminology]) without confusing matters further
+   with terms and concepts from other naming systems that are similar,
+   but different.
+
+   The following terms used in this document are to be interpreted as
+   follows:
+
+      Aardvark (n): a medium-sized, burrowing, nocturnal mammal native
+      to Africa; the only living species of the order Tubulidentata.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abley, et al.            Expires March 20, 2016                 [Page 5]
+
+Internet-Draft     Special-Use Names Problem Statement    September 2015
+
+
+3.  Clear and Specific Guidelines
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abley, et al.            Expires March 20, 2016                 [Page 6]
+
+Internet-Draft     Special-Use Names Problem Statement    September 2015
+
+
+4.  Evaluation Process
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abley, et al.            Expires March 20, 2016                 [Page 7]
+
+Internet-Draft     Special-Use Names Problem Statement    September 2015
+
+
+5.  Coordination with ICANN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abley, et al.            Expires March 20, 2016                 [Page 8]
+
+Internet-Draft     Special-Use Names Problem Statement    September 2015
+
+
+6.  Clear Expectations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abley, et al.            Expires March 20, 2016                 [Page 9]
+
+Internet-Draft     Special-Use Names Problem Statement    September 2015
+
+
+7.  Protocol Identifiers in Names
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abley, et al.            Expires March 20, 2016                [Page 10]
+
+Internet-Draft     Special-Use Names Problem Statement    September 2015
+
+
+8.  Separation of Protocol and Policy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abley, et al.            Expires March 20, 2016                [Page 11]
+
+Internet-Draft     Special-Use Names Problem Statement    September 2015
+
+
+9.  Security Considerations
+
+   This document aims to document a problem statement that will inform
+   future work, and hence presents no implications for Internet
+   security.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abley, et al.            Expires March 20, 2016                [Page 12]
+
+Internet-Draft     Special-Use Names Problem Statement    September 2015
+
+
+10.  IANA Considerations
+
+   This document has no IANA actions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abley, et al.            Expires March 20, 2016                [Page 13]
+
+Internet-Draft     Special-Use Names Problem Statement    September 2015
+
+
+11.  Acknowledgements
+
+   Your name here, etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abley, et al.            Expires March 20, 2016                [Page 14]
+
+Internet-Draft     Special-Use Names Problem Statement    September 2015
+
+
+12.  References
+
+12.1.  Normative References
+
+   [RFC1034]  Mockapetris, P., "Domain names - concepts and facilities",
+              STD 13, RFC 1034, DOI 10.17487/RFC1034, November 1987,
+              <http://www.rfc-editor.org/info/rfc1034>.
+
+   [RFC1035]  Mockapetris, P., "Domain names - implementation and
+              specification", STD 13, RFC 1035, DOI 10.17487/RFC1035,
+              November 1987, <http://www.rfc-editor.org/info/rfc1035>.
+
+   [RFC6761]  Cheshire, S. and M. Krochmal, "Special-Use Domain Names",
+              RFC 6761, DOI 10.17487/RFC6761, February 2013,
+              <http://www.rfc-editor.org/info/rfc6761>.
+
+12.2.  Informative References
+
+   [I-D.ietf-dnsop-dns-terminology]
+              Hoffman, P., Sullivan, A., and K. Fujiwara, "DNS
+              Terminology", draft-ietf-dnsop-dns-terminology-04 (work in
+              progress), August 2015.
+
+   [I-D.ietf-dnsop-onion-tld]
+              Appelbaum, J. and A. Muffett, "The .onion Special-Use
+              Domain Name", draft-ietf-dnsop-onion-tld-01 (work in
+              progress), September 2015.
+
+   [RFC6762]  Cheshire, S. and M. Krochmal, "Multicast DNS", RFC 6762,
+              DOI 10.17487/RFC6762, February 2013,
+              <http://www.rfc-editor.org/info/rfc6762>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abley, et al.            Expires March 20, 2016                [Page 15]
+
+Internet-Draft     Special-Use Names Problem Statement    September 2015
+
+
+Appendix A.  Editorial Notes
+
+   This section (and sub-sections) to be removed prior to publication.
+
+A.1.  Venue
+
+   An appropriate forum for discussion of this draft is the dnsop
+   working group.
+
+A.2.  Change History
+
+A.2.1.  draft-adpkja-special-names-problem-00
+
+   Initial draft circulated for comment.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abley, et al.            Expires March 20, 2016                [Page 16]
+
+Internet-Draft     Special-Use Names Problem Statement    September 2015
+
+
+Authors' Addresses
+
+   Joe Abley
+   Dyn, Inc.
+   103-186 Albert Street
+   London, ON  N6A 1M1
+   Canada
+
+   Phone: +1 519 670 9327
+   Email: jabley@dyn.com
+
+
+   Peter Koch
+   DENIC
+
+   Email: pk@denic.de
+
+
+   Alain Durand
+   ICANN
+
+   Email: alain.durand@icann.org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abley, et al.            Expires March 20, 2016                [Page 17]
+
