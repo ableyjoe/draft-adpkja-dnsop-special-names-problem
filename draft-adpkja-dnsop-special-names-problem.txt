@@ -15,7 +15,29 @@ Expires: March 20, 2016                                        A. Durand
 
 Abstract
 
-   Say things.
+   The dominant protocol for name resolution on the Internet is the
+   Domain Name System (DNS).  However, other protocols exist that are
+   fundamentally different from the DNS, but which have syntactically-
+   similar namespaces.
+
+   When an end-user triggers resolution of a name on a system which
+   supports multiple, different protocols for name resolution, it is
+   desirable that the protocol to be used is unambiguous, and that
+   requests intended for one protocol are not inadvertently addressed
+   using another.
+
+   RFC 6761 introduced a framework by which, under certain
+   circumstances, a particular domain name could be acknowledged as
+   being special.  This framework has been used to make a reservation (a
+   part of the DNS namespace that should not be used) to accommodate
+   non-DNS name resolution protocols and avoid the possibility of
+   namespace collisions.
+
+   Various challenges have become apparent with the application of the
+   guidance provided in RFC 6761 to real world protocols and namespaces.
+   This document aims to document those challenges in the form of a
+   problem statement, to facilitate discussion of future improvements to
+   RFC 6761.
 
 Status of this Memo
 
@@ -26,6 +48,14 @@ Status of this Memo
    Task Force (IETF).  Note that other groups may also distribute
    working documents as Internet-Drafts.  The list of current Internet-
    Drafts is at http://datatracker.ietf.org/drafts/current/.
+
+
+
+
+Abley, et al.            Expires March 20, 2016                 [Page 1]
+
+Internet-Draft     Special-Use Names Problem Statement    September 2015
+
 
    Internet-Drafts are draft documents valid for a maximum of six months
    and may be updated, replaced, or obsoleted by other documents at any
@@ -48,36 +78,6 @@ Copyright Notice
    include Simplified BSD License text as described in Section 4.e of
    the Trust Legal Provisions and are provided without warranty as
    described in the Simplified BSD License.
-
-
-
-
-Abley, et al.            Expires March 20, 2016                 [Page 1]
-
-Internet-Draft     Special-Use Names Problem Statement    September 2015
-
-
-Table of Contents
-
-   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . . . 3
-   2.  Security Considerations . . . . . . . . . . . . . . . . . . . . 4
-   3.  IANA Considerations . . . . . . . . . . . . . . . . . . . . . . 5
-   4.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . 6
-   5.  References  . . . . . . . . . . . . . . . . . . . . . . . . . . 7
-     5.1.  Normative References  . . . . . . . . . . . . . . . . . . . 7
-     5.2.  Informative References  . . . . . . . . . . . . . . . . . . 7
-   Appendix A.  Editorial Notes  . . . . . . . . . . . . . . . . . . . 8
-     A.1.  Venue . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
-     A.2.  Change History  . . . . . . . . . . . . . . . . . . . . . . 8
-       A.2.1.  draft-adpkja-special-names-problem-00 . . . . . . . . . 8
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . . . 9
-
-
-
-
-
-
-
 
 
 
@@ -113,27 +113,27 @@ Abley, et al.            Expires March 20, 2016                 [Page 2]
 Internet-Draft     Special-Use Names Problem Statement    September 2015
 
 
-1.  Introduction
+Table of Contents
 
-   Say things.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . ancho
+   2.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . ancho
+   3.  Clear and Specific Guidelines . . . . . . . . . . . . . . . ancho
+   4.  Evaluation Process  . . . . . . . . . . . . . . . . . . . . ancho
+   5.  Coordination with ICANN . . . . . . . . . . . . . . . . . . ancho
+   6.  Clear Expectations  . . . . . . . . . . . . . . . . . . . . ancho
+   7.  Protocol Identifiers in Names . . . . . . . . . . . . . . . ancho
+   8.  Separation of Protocol and Policy . . . . . . . . . . . . . ancho
+   9.  Security Considerations . . . . . . . . . . . . . . . . . . ancho
+   10. IANA Considerations . . . . . . . . . . . . . . . . . . . . ancho
+   11. Acknowledgements  . . . . . . . . . . . . . . . . . . . . . ancho
+   12. References  . . . . . . . . . . . . . . . . . . . . . . . . ancho
+     12.1.  Normative References . . . . . . . . . . . . . . . . . ancho
+     12.2.  Informative References . . . . . . . . . . . . . . . . ancho
+   Appendix A.  Editorial Notes  . . . . . . . . . . . . . . . . . ancho
+     A.1.   Venue  . . . . . . . . . . . . . . . . . . . . . . . . ancho
+     A.2.   Change History . . . . . . . . . . . . . . . . . . . . ancho
+       A.2.1.  draft-adpkja-special-names-problem-00 . . . . . . . ancho
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . .     0
 
 
 
@@ -169,336 +169,30 @@ Abley, et al.            Expires March 20, 2016                 [Page 3]
 Internet-Draft     Special-Use Names Problem Statement    September 2015
 
 
-2.  Security Considerations
-
-   This document aims to document a problem statement that will inform
-   future work, and hence presents no implications for Internet
-   security.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Abley, et al.            Expires March 20, 2016                 [Page 4]
-
-Internet-Draft     Special-Use Names Problem Statement    September 2015
-
-
-3.  IANA Considerations
-
-   This document has no IANA actions.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Abley, et al.            Expires March 20, 2016                 [Page 5]
-
-Internet-Draft     Special-Use Names Problem Statement    September 2015
-
-
-4.  Acknowledgements
-
-   Your name here, etc.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Abley, et al.            Expires March 20, 2016                 [Page 6]
-
-Internet-Draft     Special-Use Names Problem Statement    September 2015
-
-
-5.  References
-
-5.1.  Normative References
-
-   [RFC1034]  Mockapetris, P., "Domain names - concepts and facilities",
-              STD 13, RFC 1034, DOI 10.17487/RFC1034, November 1987,
-              <http://www.rfc-editor.org/info/rfc1034>.
-
-   [RFC1035]  Mockapetris, P., "Domain names - implementation and
-              specification", STD 13, RFC 1035, DOI 10.17487/RFC1035,
-              November 1987, <http://www.rfc-editor.org/info/rfc1035>.
-
-   [RFC6761]  Cheshire, S. and M. Krochmal, "Special-Use Domain Names",
-              RFC 6761, DOI 10.17487/RFC6761, February 2013,
-              <http://www.rfc-editor.org/info/rfc6761>.
-
-5.2.  Informative References
-
-   [I-D.ietf-dnsop-dns-terminology]
-              Hoffman, P., Sullivan, A., and K. Fujiwara, "DNS
-              Terminology", draft-ietf-dnsop-dns-terminology-04 (work in
-              progress), August 2015.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Abley, et al.            Expires March 20, 2016                 [Page 7]
-
-Internet-Draft     Special-Use Names Problem Statement    September 2015
-
-
-Appendix A.  Editorial Notes
-
-   This section (and sub-sections) to be removed prior to publication.
-
-A.1.  Venue
-
-   An appropriate forum for discussion of this draft is the dnsop
-   working group.
-
-A.2.  Change History
-
-A.2.1.  draft-adpkja-special-names-problem-00
-
-   Initial draft circulated for comment.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Abley, et al.            Expires March 20, 2016                 [Page 8]
-
-Internet-Draft     Special-Use Names Problem Statement    September 2015
-
-
-Authors' Addresses
-
-   Joe Abley
-   Dyn, Inc.
-   103-186 Albert Street
-   London, ON  N6A 1M1
-   Canada
-
-   Phone: +1 519 670 9327
-   Email: jabley@dyn.com
-
-
-   Peter Koch
-   DENIC
-
-   Email: pk@denic.de
-
-
-   Alain Durand
-   ICANN
-
-   Email: alain.durand@icann.org
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Abley, et al.            Expires March 20, 2016                 [Page 9]
-
+1.  Introduction
+
+   The dominant protocol for name resolution on the Internet is the
+   Domain Name System (DNS), as originally specified in [RFC1034] and
+   [RFC1035].  However, other protocols exist that are fundamentally
+   different from the DNS, but which have syntactically-similar
+   namespaces.
+
+   When an end-user triggers resolution of a name on a system which
+   supports multiple, different protocols for name resolution, it is
+   desirable that the protocol to be used is unambiguous, and that
+   requests intended for one protocol are not inadvertently addressed
+   using another.
+
+   [RFC6761] introduced a framework by which, under certain
+   circumstances, a particular domain name could be acknowledged as
+   being special.  This framework has been used to make a reservation (a
+   part of the DNS namespace that should not be used) to accommodate
+   non-DNS name resolution protocols and avoid the possibility of
+   namespace collisions.
+
+   [RFC6761] describes seven questions which should be considered when
+   deciding whether a domain name is special.  Domain names that are
+   acknowledged to be special are inserted into the "Special-Use Domain
+   Names" registry.  The initial contents of that registry included 25
+   entries, four of which were top-level domains ("TEST", "LOCALHOST",
+   "INVALID" and "EXAMPLE").  Since the publication of [RFC6761], the

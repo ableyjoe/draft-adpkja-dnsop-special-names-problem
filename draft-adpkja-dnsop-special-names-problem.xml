@@ -10,6 +10,8 @@
     'http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6761.xml'>
   <!ENTITY I-D.ietf-dnsop-dns-terminology PUBLIC ''
     'http://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-dnsop-dns-terminology.xml'>
+  <!ENTITY I-D.ietf-dnsop-onion-tld PUBLIC ''
+    'http://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-dnsop-onion-tld.xml'>
 ]>
 
 <rfc category="std" ipr="trust200902" updates="1035"
@@ -69,10 +71,11 @@
         addressed using another.</t>
 
       <t>RFC 6761 introduced a framework by which, under certain
-	circumstances, a reservation could be made to accommodate
-	non-DNS name resolution protocols and avoid the possibility
-	of collisions between the two different, but syntactically-similar
-	namespaces.</t>
+	circumstances, a particular domain name could be acknowledged
+	as being special. This framework has been used to make a
+	reservation (a part of the DNS namespace that should not
+	be used) to accommodate non-DNS name resolution protocols
+	and avoid the possibility of namespace collisions.</t>
 
       <t>Various challenges have become apparent with the application
 	of the guidance provided in RFC 6761 to real world protocols
@@ -84,6 +87,68 @@
 
   <middle>
     <section title="Introduction">
+      <t>The dominant protocol for name resolution on the Internet
+	is the Domain Name System (DNS), as originally specified
+	in <xref target="RFC1034"/> and <xref target="RFC1035"/>.
+	However, other protocols exist that are fundamentally
+	different from the DNS, but which have syntactically-similar
+	namespaces.</t>
+
+      <t>When an end-user triggers resolution of a name on a system
+        which supports multiple, different protocols for name resolution,
+        it is desirable that the protocol to be used is unambiguous, and
+        that requests intended for one protocol are not inadvertently
+        addressed using another.</t>
+
+      <t><xref target="RFC6761"/> introduced a framework by which,
+	under certain circumstances, a particular domain name could
+	be acknowledged as being special. This framework has been
+	used to make a reservation (a part of the DNS namespace
+	that should not be used) to accommodate non-DNS name
+	resolution protocols and avoid the possibility of namespace
+	collisions.</t>
+
+      <t><xref target="RFC6761"/> describes seven questions which
+	should be considered when deciding whether a domain name
+	is special.  Domain names that are acknowledged to be special
+	are inserted into the "Special-Use Domain Names" registry.
+	The initial contents of that registry included 25 entries,
+	four of which were top-level domains ("TEST", "LOCALHOST",
+	"INVALID" and "EXAMPLE"). Since the publication of <xref
+	target="RFC6761"/>, the top-level domain names "LOCAL" <xref
+	target="RFC6762"/> and "ONION" <xref
+	target="I-D.ietf-dnsop-onion-tld"/> were added.</t>
+
+      <t>While some of the entries in the Special-Use Domain Names
+	registry document use of a DNS-like namespace by non-DNS
+	name resolution protocols (LOCALHOST, LOCAL, ONION), other
+	entries are included for different reasons (e.g. EXAMPLE.ORG,
+	EXAMPLE.COM and EXAMPLE.NET are reserved for use in
+	documentation).</t>
+
+      <t>This document specifically explores the problems in the
+	use of <xref target="RFC6761"/> to justify the reservation
+	of top-level domains in the DNS. Use of <xref target="RFC6761"/>
+	with reference to other domain names is not discussed.</t>
+    </section>
+
+    <section title="Terminology">
+      <t>Clear and unambiguous use of terminology is important for
+	the clear formulation of any problem statement. The DNS
+	protocol suffers from imprecise and overloaded terminology
+	(e.g. see <xref target="I-D.ietf-dnsop-dns-terminology"/>)
+	without confusing matters further with terms and concepts
+	from other naming systems that are similar, but different.</t>
+
+      <t>The following terms used in this document are to be
+        interpreted as follows:
+
+        <list style="hanging">
+          <t>Aardvark (n): a medium-sized, burrowing, nocturnal mammal
+            native to Africa; the only living species of the order
+            Tubulidentata.</t>
+        </list>
+      </t>
     </section>
 
     <section title="Clear and Specific Guidelines">
