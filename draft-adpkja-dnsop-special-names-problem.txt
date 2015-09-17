@@ -10,7 +10,8 @@ Expires: March 20, 2016                                            DENIC
                                                       September 17, 2015
 
 
-             Problem Statement for Special-Use Domain Names
+   Problem Statement for the Reservation of Top-Level Domains in the
+                   Special-Use Domain Names Registry
               draft-adpkja-dnsop-special-names-problem-00
 
 Abstract
@@ -51,10 +52,9 @@ Status of this Memo
 
 
 
-
 Abley, et al.            Expires March 20, 2016                 [Page 1]
 
-Internet-Draft     Special-Use Names Problem Statement    September 2015
+Internet-Draft     Top-Level/Special-Use Domain Names     September 2015
 
 
    Internet-Drafts are draft documents valid for a maximum of six months
@@ -110,7 +110,7 @@ Copyright Notice
 
 Abley, et al.            Expires March 20, 2016                 [Page 2]
 
-Internet-Draft     Special-Use Names Problem Statement    September 2015
+Internet-Draft     Top-Level/Special-Use Domain Names     September 2015
 
 
 Table of Contents
@@ -166,7 +166,7 @@ Table of Contents
 
 Abley, et al.            Expires March 20, 2016                 [Page 3]
 
-Internet-Draft     Special-Use Names Problem Statement    September 2015
+Internet-Draft     Top-Level/Special-Use Domain Names     September 2015
 
 
 1.  Terminology
@@ -222,7 +222,7 @@ Internet-Draft     Special-Use Names Problem Statement    September 2015
 
 Abley, et al.            Expires March 20, 2016                 [Page 4]
 
-Internet-Draft     Special-Use Names Problem Statement    September 2015
+Internet-Draft     Top-Level/Special-Use Domain Names     September 2015
 
 
 2.  Introduction
@@ -278,7 +278,7 @@ Internet-Draft     Special-Use Names Problem Statement    September 2015
 
 Abley, et al.            Expires March 20, 2016                 [Page 5]
 
-Internet-Draft     Special-Use Names Problem Statement    September 2015
+Internet-Draft     Top-Level/Special-Use Domain Names     September 2015
 
 
 3.  Clear and Specific Guidelines
@@ -334,7 +334,7 @@ Internet-Draft     Special-Use Names Problem Statement    September 2015
 
 Abley, et al.            Expires March 20, 2016                 [Page 6]
 
-Internet-Draft     Special-Use Names Problem Statement    September 2015
+Internet-Draft     Top-Level/Special-Use Domain Names     September 2015
 
 
 4.  Evaluation Process
@@ -390,7 +390,7 @@ Internet-Draft     Special-Use Names Problem Statement    September 2015
 
 Abley, et al.            Expires March 20, 2016                 [Page 7]
 
-Internet-Draft     Special-Use Names Problem Statement    September 2015
+Internet-Draft     Top-Level/Special-Use Domain Names     September 2015
 
 
 5.  Coordination between the IETF and ICANN
@@ -446,7 +446,7 @@ Internet-Draft     Special-Use Names Problem Statement    September 2015
 
 Abley, et al.            Expires March 20, 2016                 [Page 8]
 
-Internet-Draft     Special-Use Names Problem Statement    September 2015
+Internet-Draft     Top-Level/Special-Use Domain Names     September 2015
 
 
 6.  Clear Expectations
@@ -502,7 +502,7 @@ Internet-Draft     Special-Use Names Problem Statement    September 2015
 
 Abley, et al.            Expires March 20, 2016                 [Page 9]
 
-Internet-Draft     Special-Use Names Problem Statement    September 2015
+Internet-Draft     Top-Level/Special-Use Domain Names     September 2015
 
 
 7.  Protocol Identifiers in Names
@@ -558,7 +558,7 @@ Internet-Draft     Special-Use Names Problem Statement    September 2015
 
 Abley, et al.            Expires March 20, 2016                [Page 10]
 
-Internet-Draft     Special-Use Names Problem Statement    September 2015
+Internet-Draft     Top-Level/Special-Use Domain Names     September 2015
 
 
 8.  Separation of Protocol and Policy
@@ -614,7 +614,7 @@ Internet-Draft     Special-Use Names Problem Statement    September 2015
 
 Abley, et al.            Expires March 20, 2016                [Page 11]
 
-Internet-Draft     Special-Use Names Problem Statement    September 2015
+Internet-Draft     Top-Level/Special-Use Domain Names     September 2015
 
 
 9.  Security Considerations
@@ -670,7 +670,7 @@ Internet-Draft     Special-Use Names Problem Statement    September 2015
 
 Abley, et al.            Expires March 20, 2016                [Page 12]
 
-Internet-Draft     Special-Use Names Problem Statement    September 2015
+Internet-Draft     Top-Level/Special-Use Domain Names     September 2015
 
 
 10.  IANA Considerations
@@ -726,7 +726,7 @@ Internet-Draft     Special-Use Names Problem Statement    September 2015
 
 Abley, et al.            Expires March 20, 2016                [Page 13]
 
-Internet-Draft     Special-Use Names Problem Statement    September 2015
+Internet-Draft     Top-Level/Special-Use Domain Names     September 2015
 
 
 11.  Acknowledgements
@@ -782,7 +782,7 @@ Internet-Draft     Special-Use Names Problem Statement    September 2015
 
 Abley, et al.            Expires March 20, 2016                [Page 14]
 
-Internet-Draft     Special-Use Names Problem Statement    September 2015
+Internet-Draft     Top-Level/Special-Use Domain Names     September 2015
 
 
 12.  References
@@ -838,7 +838,7 @@ Internet-Draft     Special-Use Names Problem Statement    September 2015
 
 Abley, et al.            Expires March 20, 2016                [Page 15]
 
-Internet-Draft     Special-Use Names Problem Statement    September 2015
+Internet-Draft     Top-Level/Special-Use Domain Names     September 2015
 
 
 Appendix A.  Editorial Notes
@@ -894,7 +894,7 @@ A.2.1.  draft-adpkja-special-names-problem-00
 
 Abley, et al.            Expires March 20, 2016                [Page 16]
 
-Internet-Draft     Special-Use Names Problem Statement    September 2015
+Internet-Draft     Top-Level/Special-Use Domain Names     September 2015
 
 
 Authors' Addresses
