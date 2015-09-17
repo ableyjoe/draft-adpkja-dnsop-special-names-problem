@@ -6,6 +6,8 @@
     'http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.1034.xml'>
   <!ENTITY rfc1035 PUBLIC ''
     'http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.1035.xml'>
+  <!ENTITY rfc1918 PUBLIC ''
+    'http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.1918.xml'>
   <!ENTITY rfc2826 PUBLIC ''
     'http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2826.xml'>
   <!ENTITY rfc6761 PUBLIC ''
@@ -120,17 +122,17 @@
 
     <section title="Introduction">
       <t>The dominant protocol for name resolution on the Internet
-	is the Domain Name System (DNS), as originally specified
-	in <xref target="RFC1034"/> and <xref target="RFC1035"/>.
-	However, other protocols exist that are fundamentally
-	different from the DNS, but which have syntactically-similar
-	namespaces.</t>
+	is the Domain Name System (DNS), originally specified in
+	<xref target="RFC1034"/> and <xref target="RFC1035"/>.
+	However, other name resolution protocols exist that are
+	fundamentally different from the DNS, but which make use of
+	syntactically-similar namespaces.</t>
 
       <t>When an end-user triggers resolution of a name on a system
-        which supports multiple, different protocols for name resolution,
-        it is desirable that the protocol to be used is unambiguous, and
-        that requests intended for one protocol are not inadvertently
-        addressed using another.</t>
+	which supports multiple, different name resolution protocols,
+	it is desirable that the protocol to be used is unambiguous
+	and that requests intended for one protocol are not
+	inadvertently addressed using another.</t>
 
       <t><xref target="RFC6761"/> introduced a framework by which,
 	under certain circumstances, a particular domain name could
@@ -144,18 +146,20 @@
 	should be considered when deciding whether a domain name
 	is special.  Domain names that are acknowledged to be special
 	are inserted into the Registry, the initial contents of
-	which included 25 entries, four of which were top-level
-	domains ("TEST", "LOCALHOST", "INVALID" and "EXAMPLE").
-	Since the publication of <xref target="RFC6761"/>, the
-	top-level domain names "LOCAL" <xref target="RFC6762"/> and
-	"ONION" <xref target="I-D.ietf-dnsop-onion-tld"/> were
-	added.</t>
+	which included 25 entries; four were top-level domains
+	(TEST, LOCALHOST, INVALID and EXAMPLE).  Following the
+	publication of <xref target="RFC6761"/>, the top-level
+	domain names "LOCAL" <xref target="RFC6762"/> and "ONION"
+	<xref target="I-D.ietf-dnsop-onion-tld"/> were added.</t>
 
       <t>While some of the entries in the Registry document
 	the use of a DNS-like namespace by non-DNS name resolution
 	protocols (LOCALHOST, LOCAL, ONION), other entries are
 	included for different reasons (e.g. EXAMPLE.ORG, EXAMPLE.COM
-	and EXAMPLE.NET are reserved for use in documentation).</t>
+	and EXAMPLE.NET are reserved for use in documentation;
+	so-called reverse zones corresponding to <xref target="RFC1918"/>
+	addresses are special in the sense that they are usually
+	non-unique).</t>
 
       <t>This document specifically explores the problems in the
 	use of <xref target="RFC6761"/> to justify the reservation
@@ -383,6 +387,7 @@
     </references>
 
     <references title="Informative References">
+      &rfc1918;
       &rfc2826;
       &rfc6762;
 
