@@ -267,7 +267,7 @@
 	has the potential to expose special handling of particular
 	queries in the DNS by a particular audience. However, it is
 	not clear what any of those audiences might reasonably
-        expect as a result of a succesful request to add a top-level
+        expect as a result of a successful request to add a top-level
         domain to the Registry.</t>
 
       <t>For example, reservation of a top-level domain by the IETF
@@ -294,7 +294,7 @@
       <t>Useful reservations of top-level domains should be accompanied
 	by the existence of realistic expectations of each of the
 	seven audiences, and the evaluation of particular requests
-	should consider the practical liklihood of those expectations
+	should consider the practical likelihood of those expectations
 	being met and the implications if they are not.</t>
     </section>
 
@@ -331,13 +331,13 @@
 	oversight. However, it is not clear that this is still a
 	problem that can be solved; it could be argued that in the
 	absence of a more elegant alternative, a pragmatic choice
-	to embed priotocol selectors as namespace tokens has
-	effectively already been made, and the running code and
-	consensus in how it should be used by significant user bases
-	should not be discounted. Although the reservation of names
-	in the DNS namespace can be made at any level, the three
-	examples above demonstrate use-cases for reservation at the
-	top-level, and hence that case must be considered.</t>
+	to embed protocol selectors as namespace tokens has effectively
+	already been made. The running code and effective consensus
+	in how it should be used by significant user bases should
+	not be discounted. Although the reservation of names in the
+	DNS namespace can be made at any level, the three examples
+	above demonstrate use-cases for reservation at the top-level,
+	and hence that case must be considered.</t>
 
       <t>In <xref target="RFC2826"/> the IAB noted that
 
@@ -359,18 +359,19 @@
         domain name to be added to the Registry when considering a
         particular request for a special-use reservation.</t>
 
-      <t>In the case of LOCALHOST, LOCAL and ONION, use of particular
-        domain names was already in use by a substantial population of
-        end-users, and the practical cost of a transition perhaps
-        justifies their continued use. However, when formulating a
-        general process for future such reservations, prior use of
-        particular names cannot be assumed.</t>
+      <t>In the case of LOCALHOST, LOCAL and ONION, those particular
+	domain names were already in use by a substantial population
+	of end-users at the time they were added to the Registry;
+	the practical cost of a transition provides justification
+	for their continued use. However, when formulating a general
+	process for future such reservations, such prior use of
+	particular names cannot be assumed.</t>
 
       <t>In the case where the technical requirement is for reservation
-	of a domain name that is unique, and not any domain name
-	in particular, the IETF should consider whether the choice
-	of name is really a technical matter, or a policy decision
-	that is best addressed in other venues.</t>
+	of a domain name that is simply unique, and not for any
+	domain name in particular, the IETF should consider whether
+	the choice of name is really a technical matter, or a policy
+	decision that is best addressed in other venues.</t>
     </section>
 
     <section title="Security Considerations">
