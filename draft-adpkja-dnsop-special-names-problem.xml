@@ -194,6 +194,8 @@
     </references>
 
     <references title="Informative References">
+      &rfc6762;
+
       &I-D.ietf-dnsop-dns-terminology;
     </references>
 
