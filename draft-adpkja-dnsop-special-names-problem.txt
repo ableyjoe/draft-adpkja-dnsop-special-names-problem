@@ -190,7 +190,7 @@ Internet-Draft     Top-Level/Special-Use Domain Names     September 2015
       [RFC6761] and published at <https://www.iana.org/assignments/
       special-use-domain-names/special-use-domain-names.xhtml>
 
-   [This section to be completed following review and development of the
+   [This section to be completed following review and refinement of the
    rest of the text.]
 
 
