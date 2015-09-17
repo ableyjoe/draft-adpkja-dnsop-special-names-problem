@@ -6,6 +6,8 @@
     'http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.1034.xml'>
   <!ENTITY rfc1035 PUBLIC ''
     'http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.1035.xml'>
+  <!ENTITY rfc2826 PUBLIC ''
+    'http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2826.xml'>
   <!ENTITY rfc6761 PUBLIC ''
     'http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6761.xml'>
   <!ENTITY rfc6762 PUBLIC ''
@@ -16,7 +18,7 @@
     'http://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-dnsop-onion-tld.xml'>
 ]>
 
-<rfc category="std" ipr="trust200902" updates="1035"
+<rfc category="info" ipr="trust200902"
   docName="draft-adpkja-dnsop-special-names-problem-00">
 
   <?rfc toc="yes" ?>
@@ -74,20 +76,44 @@
 
       <t>RFC 6761 introduced a framework by which, under certain
 	circumstances, a particular domain name could be acknowledged
-	as being special. This framework has been used to make a
-	reservation (a part of the DNS namespace that should not
-	be used) to accommodate non-DNS name resolution protocols
+	as being special. This framework has been used to make
+	top-level domain reservations, that is, particular top-level
+	domains that should not be used within the DNS to accommodate
+	parallel use of non-DNS name resolution protocols by end-users
 	and avoid the possibility of namespace collisions.</t>
 
-      <t>Various challenges have become apparent with the application
-	of the guidance provided in RFC 6761 to real world protocols
-	and namespaces. This document aims to document those
-	challenges in the form of a problem statement, to facilitate
-	discussion of future improvements to RFC 6761.</t>
+      <t>Various challenges have become apparent with this application
+	of the guidance provided in RFC 6761.  This document aims
+	to document those challenges in the form of a problem
+	statement, to facilitate further discussion of potential
+	solutions.</t>
     </abstract>
   </front>
 
   <middle>
+    <section title="Terminology">
+      <t>Clear and unambiguous use of terminology is important for
+	the clear formulation of any problem statement. The DNS
+	protocol suffers from imprecise and overloaded terminology
+	(e.g. see <xref target="I-D.ietf-dnsop-dns-terminology"/>)
+	without confusing matters further with terms and concepts
+	from other naming systems that are similar, but different.</t>
+
+      <t>In the interests of clarity, the following terms used in
+        this document are to be interpreted as follows:
+
+        <list style="hanging">
+          <t>Aardvark (n): a medium-sized, burrowing, nocturnal mammal
+            native to Africa; the only living species of the order
+            Tubulidentata. See <eref target="https://en.wikipedia.org/wiki/Aardvark"/>.</t>
+
+          <t>Registry (n): the Special-Use Domain Names Registry created
+            by <xref target="RFC6761"/> and published at
+            <eref target="https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml"/></t>
+        </list>
+      </t>
+    </section>
+
     <section title="Introduction">
       <t>The dominant protocol for name resolution on the Internet
 	is the Domain Name System (DNS), as originally specified
@@ -106,27 +132,26 @@
 	under certain circumstances, a particular domain name could
 	be acknowledged as being special. This framework has been
 	used to make a reservation (a part of the DNS namespace
-	that should not be used) to accommodate non-DNS name
-	resolution protocols and avoid the possibility of namespace
-	collisions.</t>
+	that should not be used by the DNS protocol) to accommodate
+	non-DNS name resolution protocols and to avoid the possibility
+	of namespace collisions.</t>
 
       <t><xref target="RFC6761"/> describes seven questions which
 	should be considered when deciding whether a domain name
 	is special.  Domain names that are acknowledged to be special
-	are inserted into the "Special-Use Domain Names" registry.
-	The initial contents of that registry included 25 entries,
-	four of which were top-level domains ("TEST", "LOCALHOST",
-	"INVALID" and "EXAMPLE"). Since the publication of <xref
-	target="RFC6761"/>, the top-level domain names "LOCAL" <xref
-	target="RFC6762"/> and "ONION" <xref
-	target="I-D.ietf-dnsop-onion-tld"/> were added.</t>
+	are inserted into the Registry, the initial contents of
+	which included 25 entries, four of which were top-level
+	domains ("TEST", "LOCALHOST", "INVALID" and "EXAMPLE").
+	Since the publication of <xref target="RFC6761"/>, the
+	top-level domain names "LOCAL" <xref target="RFC6762"/> and
+	"ONION" <xref target="I-D.ietf-dnsop-onion-tld"/> were
+	added.</t>
 
-      <t>While some of the entries in the Special-Use Domain Names
-	registry document use of a DNS-like namespace by non-DNS
-	name resolution protocols (LOCALHOST, LOCAL, ONION), other
-	entries are included for different reasons (e.g. EXAMPLE.ORG,
-	EXAMPLE.COM and EXAMPLE.NET are reserved for use in
-	documentation).</t>
+      <t>While some of the entries in the Registry document
+	the use of a DNS-like namespace by non-DNS name resolution
+	protocols (LOCALHOST, LOCAL, ONION), other entries are
+	included for different reasons (e.g. EXAMPLE.ORG, EXAMPLE.COM
+	and EXAMPLE.NET are reserved for use in documentation).</t>
 
       <t>This document specifically explores the problems in the
 	use of <xref target="RFC6761"/> to justify the reservation
@@ -134,47 +159,207 @@
 	with reference to other domain names is not discussed.</t>
     </section>
 
-    <section title="Terminology">
-      <t>Clear and unambiguous use of terminology is important for
-	the clear formulation of any problem statement. The DNS
-	protocol suffers from imprecise and overloaded terminology
-	(e.g. see <xref target="I-D.ietf-dnsop-dns-terminology"/>)
-	without confusing matters further with terms and concepts
-	from other naming systems that are similar, but different.</t>
+    <section title="Clear and Specific Guidelines" anchor="justification">
+      <t><xref target="RFC6761"/> (section 5) describes seven
+	questions to be answered in order to provide clear guidance
+	about how and why a particular domain name is special. These
+	seven questions can be broadly categorised as follows:
 
-      <t>The following terms used in this document are to be
-        interpreted as follows:
+        <list style="numbers">
+          <t>impact on end-users;</t>
 
-        <list style="hanging">
-          <t>Aardvark (n): a medium-sized, burrowing, nocturnal mammal
-            native to Africa; the only living species of the order
-            Tubulidentata.</t>
+          <t>impact on applications;</t>
+
+          <t>impact on name resolution APIs and libraries;</t>
+
+          <t>impact on recursive resolvers;</t>
+
+          <t>impact on authoritative DNS servers;</t>
+
+          <t>impact on DNS server operators;</t>
+
+          <t>impact on DNS registries and registrars.</t>
         </list>
-      </t>
-    </section>
 
-    <section title="Clear and Specific Guidelines">
+        Answers to these seven questions provide guidance to
+        various audiences on how to handle a special-use domain name
+        once it has been registered. However, they are inadequate
+        for determining whether a particular domain name qualifies
+        as being special and should be included in the Registry.</t>
+
+      <t>Experience with the review and ultimate approval of <xref
+	target="RFC6762"/> and <xref target="I-D.ietf-dnsop-onion-tld"/>
+	has revealed a need for objective criteria and a clear
+	process that encourages and facilitates useful registrations
+	of top-level domains in the Registry without fear of abuse,
+	and with consistent and adequate consideration of all future
+        requests.</t>
     </section>
 
     <section title="Evaluation Process">
+      <t><xref target="RFC6762"/> specifies the way in which "an
+        IETF 'Standards Action' or 'IESG Approval' document" should
+        present answers to the questions described in
+        <xref target="justification"/>, but does not describe the
+        process by which the answers should be evaluated.</t>
+
+      <t>For example, it is not clear whether the evaluation of a
+	document which requests additions to the Registry should
+	be performed by the IESG, by the IAB, by the DNSOP working
+	group, by an ad-hoc working group, by expert review or any
+	combination of those approaches.</t>
+
+      <t>At the time of writing, the DNSOP working group charter
+        does not clearly indicate that DNSOP is the proper venue
+        for the evaluation to be carried out, although it also does
+        not prohibit this work taking place there.</t>
+
+      <t>As an illustration of the inconsistency that has been
+	observed already, <xref target="RFC6762"/> was published
+	as an AD-sponsored individual submission in the INT area,
+	and the IESG evaluation record does not reveal any discussion
+	of the reservation of the LOCAL top-level domain in the
+	DNS; <xref target="I-D.ietf-dnsop-onion-tld"/>, however,
+	was published as a working group document through DNSOP,
+	and an extensive discussion by the IESG on the merits of
+	the request took place.</t>
     </section>
 
-    <section title="Coordination with ICANN">
+    <section>
+      <t>The policy surrounding the implementation and management
+	of top-level domains in the DNS has been developed using a
+	multi-stakeholder process convened by ICANN. At the time
+	of writing, the process by which most new top-level domains
+	are reviewed includes the ability for applications to be
+	rejected on technical grounds; for example, an application
+	for "LOCALHOST" would not be approved.</t>
+
+      <t>Whilst discussing the particular attributes that make a
+	domain name special, <xref target="RFC6761"/> notes that
+	"the act of defining such a special name creates a higher-level
+	protocol rule, above ICANN's management of allocatable names
+	on the public Internet." This declaration may well be
+	uncontentious, perhaps accommodated by the technical review
+	alluded to above. However, a clear understanding of the
+	operational coordination required to avoid conflicts seems
+	prudent, in the interests of maintaining the stability of
+	the naming system as a whole and protecting end-users from
+	confusion or harm.</t>
     </section>
 
     <section title="Clear Expectations">
+      <t>Each of the seven questions posed by <xref target="RFC6761"/>
+	has the potential to expose special handling of particular
+	queries in the DNS by particular audiences. However, it is
+	not clear what any of those audiences might reasonably
+        expect as a result of a succesful request to add a top-level
+        domain to the Registry.</t>
+
+      <t>For example, reservation of a top-level domain by the IETF
+	does not guarantee that queries for names within a reserved
+	domain will not be sent over the Internet. The requirements
+	of the operators of recursive resolvers in the DNS cannot
+	be relied upon to be implemented; the impact on the operators
+	of DNS authoritative servers hence cannot be reliably assumed
+	to be zero. In the case of <xref
+	target="I-D.ietf-dnsop-onion-tld"/>, leakage of ONION queries
+	on the Internet might lead to disclosure of private information
+	that, in some cases, might pose a risk to the personal
+	safety of end-users.</t>
+
+      <t>The Registry as published at the time of writing does not
+        include direct guidance for any of the seven audiences,
+        relying instead upon a reference to a published RFC that
+        might well be opaque to many readers (<xref target="RFC6762"/>
+        is a seventy-page protocol specification, for example, which
+        is arguably not the most expressive way to set expectations of
+        non-technical end-users).</t>
+
+      <t>Useful reservations of top-level domains should be accompanied
+	by the existence of realistic expectations of each of the
+	seven audiences, and the evaluation of particular requests
+	should consider the practical liklihood of those expectations
+	being met and the implications if they are not.</t>
     </section>
 
     <section title="Protocol Identifiers in Names">
+      <t>At the time of writing, three top-level domain names reserved
+        by inclusion in the Registry are used by name resolution
+        protocols other than the DNS:
+
+        <list style="hanging">
+          <t hangText="LOCALHOST">is used to refer to the host on which
+            the name resolution takes place, without reference to the
+            DNS;</t>
+
+	  <t hangText="LOCAL">is used by the Multicast DNS protocol
+            specified in <xref target="RFC6762"/> which is similar in
+            some respects to the DNS, but which uses a different
+            well-known port number and is limited to a particular
+            multicast scope;</t>
+
+          <t hangText="ONION">is used to construct names that
+            designate anonymous hidden services reachable via the Tor
+            network using onion routing.</t>
+	</list>
+
+	The three name resolution protocols described above are
+	different from the DNS, and the namespaces used in each
+	naming scheme are also different (if similar, in some cases).
+        The top-level label is hence effectively being used as a
+        name resolution protocol identifier.</t>
+
+      <t>The lack of a more elegant way to specify a name resolution
+	protocol in (for example) a URI amounts to an architectural
+	problem. However, it is not clear that this is still a
+	problem that can be solved; it could be observed that in
+	the absence of a more elegant alternative, a pragmatic
+	choice to embed priotocol selectors as namespace tokens has
+	effectively already been made. Although the reservation of
+	names in the DNS namespace can be made at any level, the
+	three examples above demonstrate use-cases for reservation
+	at the top-level, and hence that case must be considered.</t>
+
+      <t>In <xref target="RFC2826"/> the IAB noted that
+
+        <list style="none">
+          <t>To remain a global network, the Internet requires the
+            existence of a globally unique public name space.
+            The DNS name space is a hierarchical name space derived
+            from a single, globally unique root."</t>
+        </list>
+
+        Maintaining a globally-unique public namespace that supports
+        different name resolution protocols is hence an architectural
+        requirement, and some facility for reservation of top-level
+        domains in the DNS is necessary.</t>
     </section>
 
     <section title="Separation of Protocol and Policy">
+      <t><xref target="RFC6761"/> does not address the choice of
+        domain name to be added to the Registry when considering a
+        particular case of special-use.</t>
+
+      <t>In the case of LOCALHOST, LOCAL and ONION, use of particular
+        domain names was already in use by a substantial population of
+        end-users, and the practical cost of a transition perhaps
+        justifies their continued use. However, when formulating a
+        general process for future such reservations, prior use of
+        particular names cannot be assumed.</t>
+
+      <t>In the case where the technical requirement is for reservation
+	of a unique domain name, and not any domain name in particular,
+	the IETF should consider whether the choice of name is
+	really a technical matter, or a policy decision that is
+	best addressed in other venues.</t>
     </section>
 
     <section title="Security Considerations">
-      <t>This document aims to document a problem statement that
-	will inform future work, and hence presents no implications
-	for Internet security.</t>
+      <t>This document aims to provide a problem statement that
+	will inform future work. Whilst security and privacy are
+	fundamental considerations, this document expects that that
+	future work will include such analysis, and hence no attempt
+	is made to do so here.</t>
     </section>
 
     <section title="IANA Considerations">
