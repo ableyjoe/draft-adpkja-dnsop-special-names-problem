@@ -8,6 +8,8 @@
     'http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.1035.xml'>
   <!ENTITY rfc6761 PUBLIC ''
     'http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6761.xml'>
+  <!ENTITY rfc6762 PUBLIC ''
+    'http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6762.xml'>
   <!ENTITY I-D.ietf-dnsop-dns-terminology PUBLIC ''
     'http://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-dnsop-dns-terminology.xml'>
   <!ENTITY I-D.ietf-dnsop-onion-tld PUBLIC ''
