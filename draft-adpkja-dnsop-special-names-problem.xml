@@ -322,7 +322,7 @@
 
       <t>In <xref target="RFC2826"/> the IAB noted that
 
-        <list style="none">
+        <list style="empty">
           <t>To remain a global network, the Internet requires the
             existence of a globally unique public name space.
             The DNS name space is a hierarchical name space derived
