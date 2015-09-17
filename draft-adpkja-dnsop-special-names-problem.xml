@@ -164,11 +164,12 @@
       <t>This document specifically explores the problems in the
 	use of <xref target="RFC6761"/> to justify the reservation
 	of top-level domains in the DNS. Use of <xref target="RFC6761"/>
-	with reference to other domain names is not discussed.</t>
+	with reference to other domain names is not directly
+	addressed.</t>
     </section>
 
     <section title="Clear and Specific Guidelines" anchor="justification">
-      <t><xref target="RFC6761"/> (section 5) describes seven
+      <t>In Section 5, <xref target="RFC6761"/> describes seven
 	questions to be answered in order to provide clear guidance
 	about how and why a particular domain name is special. These
 	seven questions can be broadly categorised as follows:
@@ -189,33 +190,35 @@
           <t>impact on DNS registries and registrars.</t>
         </list>
 
-        Answers to these seven questions provide guidance to
-        various audiences on how to handle a special-use domain name
-        once it has been registered. However, they are inadequate
-        for determining whether a particular domain name qualifies
-        as being special and should be included in the Registry.</t>
+	Answers to these seven questions provide guidance to the
+	corresponding seven audiences on how to handle a special-use
+	domain name once it has been reserved by inclusion in the
+	Registry. However, they are inadequate for making the
+	determination whether a particular domain name qualifies
+	as being special in the first place.</t>
 
       <t>Experience with the review and ultimate approval of <xref
 	target="RFC6762"/> and <xref target="I-D.ietf-dnsop-onion-tld"/>
 	has revealed a need for objective criteria and a clear
 	process that encourages and facilitates useful registrations
 	of top-level domains in the Registry without fear of abuse,
-	and with consistent and adequate consideration of all future
-        requests.</t>
+	and with fair, consistent and complete consideration of
+	future requests of all kinds.</t>
     </section>
 
     <section title="Evaluation Process">
       <t><xref target="RFC6762"/> specifies the way in which "an
-        IETF 'Standards Action' or 'IESG Approval' document" should
-        present answers to the questions described in
-        <xref target="justification"/>, but does not describe the
-        process by which the answers should be evaluated.</t>
+	IETF 'Standards Action' or 'IESG Approval' document" should
+	present answers to the questions described above (see <xref
+	target="justification"/>), but does not describe the process
+	by which the answers to those questions should be evaluated.</t>
 
-      <t>For example, it is not clear whether the evaluation of a
-	document which requests additions to the Registry should
-	be performed by the IESG, by the IAB, by the DNSOP working
-	group, by an ad-hoc working group, by expert review or any
-	combination of those approaches.</t>
+      <t>For example, it is not clear who is responsible for carrying
+	out an evaluation. A document which requests additions to
+	the Registry might be performed by the IESG, by the IAB,
+	by the DNSOP working group, by an ad-hoc working group, by
+	expert review or any combination of those approaches.
+        <xref target="RFC6761"/> provides no direction.</t>
 
       <t>At the time of writing, the DNSOP working group charter
         does not clearly indicate that DNSOP is the proper venue
@@ -227,10 +230,12 @@
 	as an AD-sponsored individual submission in the INT area,
 	and the IESG evaluation record does not reveal any discussion
 	of the reservation of the LOCAL top-level domain in the
-	DNS; <xref target="I-D.ietf-dnsop-onion-tld"/>, however,
+	DNS. <xref target="I-D.ietf-dnsop-onion-tld"/>, however,
 	was published as a working group document through DNSOP,
-	and an extensive discussion by the IESG on the merits of
-	the request took place.</t>
+	and an extensive discussion by both the participants of
+	DNSOP and the IESG on the merits of the request took place.
+	The evaluation process, in the absence of clear direction,
+	is demonstrably inconsistent.</t>
     </section>
 
     <section title="Coordination between the IETF and ICANN">
@@ -240,7 +245,9 @@
 	of writing, the process by which most new top-level domains
 	are reviewed includes the ability for applications to be
 	rejected on technical grounds; for example, an application
-	for "LOCALHOST" would not be approved.</t>
+	for "LOCALHOST" should not be approved, since that top-level
+	domain already has a well-defined technical use and overloading
+	it would be very likely to cause problems.</t>
 
       <t>Whilst discussing the particular attributes that make a
 	domain name special, <xref target="RFC6761"/> notes that
@@ -252,13 +259,13 @@
 	operational coordination required to avoid conflicts seems
 	prudent, in the interests of maintaining the stability of
 	the naming system as a whole and protecting end-users from
-	confusion or harm.</t>
+	confusion and harm.</t>
     </section>
 
     <section title="Clear Expectations">
       <t>Each of the seven questions posed by <xref target="RFC6761"/>
 	has the potential to expose special handling of particular
-	queries in the DNS by particular audiences. However, it is
+	queries in the DNS by a particular audience. However, it is
 	not clear what any of those audiences might reasonably
         expect as a result of a succesful request to add a top-level
         domain to the Registry.</t>
@@ -275,13 +282,14 @@
 	that, in some cases, might pose a risk to the personal
 	safety of end-users.</t>
 
-      <t>The Registry as published at the time of writing does not
-        include direct guidance for any of the seven audiences,
-        relying instead upon a reference to a published RFC that
-        might well be opaque to many readers (<xref target="RFC6762"/>
-        is a seventy-page protocol specification, for example, which
-        is arguably not the most expressive way to set expectations of
-        non-technical end-users).</t>
+      <t>At the time of writing, the Registry does not include
+	direct guidance for any of the seven audiences, relying
+	instead upon a reference for each entry in the Registry to
+	the document that requested its insertion. Such documents
+	might well be opaque to many readers (<xref target="RFC6762"/>
+	is a seventy-page protocol specification, for example, which
+	is arguably not the most expressive way to set expectations
+	of non-technical end-users).</t>
 
       <t>Useful reservations of top-level domains should be accompanied
 	by the existence of realistic expectations of each of the
@@ -311,22 +319,25 @@
             network using onion routing.</t>
 	</list>
 
-	The three name resolution protocols described above are
-	different from the DNS, and the namespaces used in each
-	naming scheme are also different (if similar, in some cases).
-        The top-level label is hence effectively being used as a
-        name resolution protocol identifier.</t>
+	The three name resolution protocols described above are,
+	to varying degrees, different from the DNS, and the namespaces
+	used in each naming scheme are also different (albeit
+	similar, in some cases). The top-level label is
+	effectively being used as a name resolution protocol
+	identifier.</t>
 
       <t>The lack of a more elegant way to specify a name resolution
 	protocol in (for example) a URI amounts to an architectural
-	problem. However, it is not clear that this is still a
-	problem that can be solved; it could be observed that in
-	the absence of a more elegant alternative, a pragmatic
-	choice to embed priotocol selectors as namespace tokens has
-	effectively already been made. Although the reservation of
-	names in the DNS namespace can be made at any level, the
-	three examples above demonstrate use-cases for reservation
-	at the top-level, and hence that case must be considered.</t>
+	oversight. However, it is not clear that this is still a
+	problem that can be solved; it could be argued that in the
+	absence of a more elegant alternative, a pragmatic choice
+	to embed priotocol selectors as namespace tokens has
+	effectively already been made, and the running code and
+	consensus in how it should be used by significant user bases
+	should not be discounted. Although the reservation of names
+	in the DNS namespace can be made at any level, the three
+	examples above demonstrate use-cases for reservation at the
+	top-level, and hence that case must be considered.</t>
 
       <t>In <xref target="RFC2826"/> the IAB noted that
 
@@ -346,7 +357,7 @@
     <section title="Separation of Protocol and Policy">
       <t><xref target="RFC6761"/> does not address the choice of
         domain name to be added to the Registry when considering a
-        particular case of special-use.</t>
+        particular request for a special-use reservation.</t>
 
       <t>In the case of LOCALHOST, LOCAL and ONION, use of particular
         domain names was already in use by a substantial population of
@@ -356,10 +367,10 @@
         particular names cannot be assumed.</t>
 
       <t>In the case where the technical requirement is for reservation
-	of a unique domain name, and not any domain name in particular,
-	the IETF should consider whether the choice of name is
-	really a technical matter, or a policy decision that is
-	best addressed in other venues.</t>
+	of a domain name that is unique, and not any domain name
+	in particular, the IETF should consider whether the choice
+	of name is really a technical matter, or a policy decision
+	that is best addressed in other venues.</t>
     </section>
 
     <section title="Security Considerations">
